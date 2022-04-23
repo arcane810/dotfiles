@@ -1,0 +1,24 @@
+# Reload sxhkd config
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Quit or Restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Create alacritty window
+super + Return
+    alacritty
+
+# Close or Kill current window
+super + {_,shift + }w
+	bspc node -{c,k}
+
+# Rofi (program launcher)
+super + {@space, r}
+	rofi -show {drun, run}
+
+
+# Switch between tiled and monocle (fullscreen) layout
+super + m
+	bspc desktop -l next
